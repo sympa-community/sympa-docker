@@ -1,0 +1,34 @@
+version: '2'
+services:
+    rest:
+        build: service/rest
+        # ports:
+        #     - 9200:9200
+        #     - 9300:9300
+        # volumes:
+        #     - ./var/es/data:/usr/share/elasticsearch/data
+        #     - ./var/es/logs:/usr/share/elasticsearch/logs
+        # networks: { localnet: { ipv4_address: 172.16.238.2 } }
+    client:
+        build: service/client
+        # environment:
+        #     ES_URL: http://es:9200
+        #     DJANGO_SETTINGS_MODULE: pod_project.settings.dev
+        #     CAS_SERVER_URL: http://cas.unistra.fr/cas/
+        #     AUTH_LDAP_SERVER_URI: ldap://ldapuds.u-strasbg.fr:389
+        #     AUTH_LDAP_BIND_DN: S3CR3T
+        #     AUTH_LDAP_BIND_PASSWORD: S3CR3T
+        #     AUTH_LDAP_BASE_DN: ou=uds,ou=people,o=annuaire
+        # command: python manage.py runserver 0.0.0.0:8010
+        # volumes:
+        #     - ./pod:/code
+        #     - ./media:/srv/media/pod
+        # ports:
+        #     - 8010:8010
+        # links: [ es ]
+        # networks: { localnet: { ipv4_address: 172.16.238.3 } }
+# networks:
+#     localnet:
+#         driver: bridge
+#         ipam:
+#             config: [ { subnet: '172.16.238.0/24' } ]
