@@ -1,0 +1,10 @@
+[Unit]
+Description=Sympa fcgi
+Documentation=man:spawn-fcgi
+
+[Service]
+ExecStart=/usr/bin/spawn-fcgi -n -F 4 -u sympa -g sympa -a 127.0.0.1 -p 8442
+/home/sympa/lib/sympa/cgi/wwsympa.fcgi
+
+[Install]
+WantedBy=multi-user.target
