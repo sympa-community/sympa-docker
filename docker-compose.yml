@@ -1,7 +1,17 @@
 version: '2'
 services:
-    rest:
-        build: service/rest
+    server:
+        build: service/server
+        ports:
+            - 8080:80
+        volumes:
+            - ../sympa-code:/code
+            - ../sympa-db:/var/lib/mysql
+
+
+    
+    #rest:
+    #    build: service/rest
         # ports:
         #     - 9200:9200
         #     - 9300:9300
@@ -9,8 +19,8 @@ services:
         #     - ./var/es/data:/usr/share/elasticsearch/data
         #     - ./var/es/logs:/usr/share/elasticsearch/logs
         # networks: { localnet: { ipv4_address: 172.16.238.2 } }
-    client:
-        build: service/client
+    #client:
+    #    build: service/client
         # environment:
         #     ES_URL: http://es:9200
         #     DJANGO_SETTINGS_MODULE: pod_project.settings.dev
