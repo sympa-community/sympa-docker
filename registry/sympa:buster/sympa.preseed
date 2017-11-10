@@ -1,0 +1,37 @@
+sympa	sympa/app-password-confirm	password	
+sympa	sympa/password-confirm	password	
+sympa	wwsympa/webserver_type	select	Other
+# Database type to be used by sympa:
+sympa	sympa/database-type	select	sqlite3
+# Delete the database for sympa?
+sympa	sympa/purge	boolean	false
+sympa	sympa/language	select	en
+sympa	sympa/passwords-do-not-match	error	
+sympa	sympa/remove-error	select	abort
+sympa	wwsympa/wwsympa_url	string	http://3aac06cf0e15/wws
+# SQLite database name for sympa:
+sympa	sympa/db/dbname	string	sympa
+# Reinstall database for sympa?
+sympa	sympa/dbconfig-reinstall	boolean	false
+sympa	sympa/internal/skip-preseed	boolean	false
+# Back up the database for sympa before upgrading?
+sympa	sympa/upgrade-backup	boolean	true
+# Deconfigure database for sympa with dbconfig-common?
+sympa	sympa/dbconfig-remove	boolean	true
+sympa	sympa/internal/reconfiguring	boolean	false
+# Do you want the sympa SOAP server to be used?
+sympa	sympa/use_soap	boolean	false
+sympa	sympa/upgrade-error	select	abort
+sympa	wwsympa/fastcgi	boolean	true
+sympa	sympa/remove_spool	boolean	false
+sympa	wwsympa/remove_spool	boolean	false
+sympa	sympa/missing-db-package-error	select	abort
+sympa	sympa/listmaster	string	listmaster@3aac06cf0e15
+sympa	sympa/hostname	string	3aac06cf0e15
+# Perform upgrade on database for sympa with dbconfig-common?
+sympa	sympa/dbconfig-upgrade	boolean	true
+# Configure database for sympa with dbconfig-common?
+sympa	sympa/dbconfig-install	boolean	true
+sympa	sympa/install-error	select	abort
+# SQLite storage directory for sympa:
+sympa	sympa/db/basepath	string	/var/lib/dbconfig-common/sqlite3/sympa
